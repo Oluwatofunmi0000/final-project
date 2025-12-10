@@ -130,6 +130,7 @@ class RecipeService {
    */
   async _getMockRecipes() {
     try {
+      // Use public/data so it's available in dev/build without env keys
       const response = await fetch('/data/mockRecipes.json');
       const data = await response.json();
       console.log('📦 Using mock recipe data');
